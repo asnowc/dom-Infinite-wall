@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"module": "nodenext",
+		"target": "es2022",
+		"types": [],
+		"lib": ["DOM", "ES2022"],
+		"declaration": true,
+		"paths": {
+			"@effect/infinite-wall": ["./src/mod.ts"],
+			"@effect/infinite-wall/react": ["./src/react.tsx"]
+		},
+		"outDir": "./dist",
+		"strict": true,
+		"jsx": "react-jsx",
+		"verbatimModuleSyntax": true,
+		"isolatedModules": true,
+		"allowImportingTsExtensions": true,
+		"rewriteRelativeImportExtensions": true,
+		"noUncheckedSideEffectImports": true,
+		"moduleDetection": "force",
+		"skipLibCheck": true
+	}
+}
