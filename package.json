@@ -1,29 +1,42 @@
 {
-  "name": "@effect/infinite-wall",
+  "name": "@uifx/infinite-wall",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
+  "description": "A component library that enables two-dimensional infinite scrolling",
   "exports": {
-    ".": "./dist/mod.js",
+    ".": "./dist/core.js",
     "./react": "./dist/react.js"
   },
   "scripts": {
-    "build": "tsc",
+    "ci:build": "pnpm build",
+    "check-type": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
     "dev": "vite"
   },
-  "license": "MIT",
-  "files": [
-    "./dist"
-  ],
   "packageManager": "pnpm@10.12.1",
   "devDependencies": {
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
     "vite": "^7.2.7",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "optionalDependencies": {
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
+  },
+  "files": [
+    "./dist"
+  ],
+  "license": "MIT",
+  "homepage": "https://asnowc.github.io/uifx-infinite-wall",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asnowc/dom-infinite-wall.git"
   }
 }

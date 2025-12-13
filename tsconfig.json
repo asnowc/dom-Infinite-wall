@@ -6,10 +6,10 @@
 		"lib": ["DOM", "ES2022"],
 		"declaration": true,
 		"paths": {
-			"@effect/infinite-wall": ["./src/mod.ts"],
-			"@effect/infinite-wall/react": ["./src/react.ts"]
+			"@uifx/infinite-wall": ["./src/core.ts"],
+			"@uifx/infinite-wall/react": ["./src/react.ts"]
 		},
-		"outDir": "./dist",
+		"noEmit": true,
 		"strict": true,
 		"jsx": "react-jsx",
 		"verbatimModuleSyntax": true,

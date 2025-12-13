@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type ReactNode } from "react";
-import { InfiniteWallRender } from "../mod.ts";
-import type { BrickElement, InfiniteWallRenderOption } from "../mod.ts";
+import { useCallback, useEffect, useMemo, useReducer, useRef, type ReactNode } from "react";
+import { InfiniteWallRender } from "../core.ts";
+import type { BrickElement, InfiniteWallRenderOption } from "../core.ts";
 import { createPortal } from "react-dom";
 import { devRender } from "./_devRender.tsx";
 

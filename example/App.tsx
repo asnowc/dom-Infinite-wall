@@ -1,4 +1,4 @@
-import { InfiniteWall } from "@effect/infinite-wall/react";
+import { InfiniteWall } from "@uifx/infinite-wall/react";
 import { useState } from "react";
 
 export default function App() {

@@ -1,7 +1,7 @@
 import { type ReactNode, useEffect, useMemo, type HTMLAttributes, useRef } from "react";
 import { useInfiniteWall, type UseInfiniteWallOption } from "./useInfiniteWall.ts";
 import { ListenMoveArea } from "./ListenMoveArea.ts";
-import type { ApplyZoomResult } from "@effect/infinite-wall";
+import type { ApplyZoomResult } from "@uifx/infinite-wall";
 
 export type InfiniteWallProps = HTMLAttributes<HTMLDivElement> &
 	Pick<UseInfiniteWallOption, "brickHeight" | "brickWidth" | "renderItem"> & {

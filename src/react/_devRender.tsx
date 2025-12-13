@@ -1,4 +1,4 @@
-import type { BrickElement, InfiniteWallRender } from "../mod.ts";
+import type { BrickElement, InfiniteWallRender } from "../core.ts";
 
 export function devRender(element: BrickElement, wall: InfiniteWallRender) {
 	return (
