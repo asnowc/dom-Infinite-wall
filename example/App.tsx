@@ -1,5 +1,5 @@
-import { InfiniteWall } from "@uifx/infinite-wall/react";
-import { useState } from "react";
+import { InfiniteWall, InfiniteWallRender } from "@uifx/infinite-wall/react";
+import { useRef, useState } from "react";
 
 export default function App() {
 	const [wallProps, setWallProps] = useState({
@@ -9,6 +9,7 @@ export default function App() {
 		brickWidth: 50,
 	});
 	const [overflowHidden, setOverflowHidden] = useState(true);
+	const wallRef = useRef<InfiniteWallRender>(null);
 	return (
 		<div
 			style={{
@@ -24,6 +25,7 @@ export default function App() {
 				brickWidth={wallProps.brickWidth}
 				draggable={wallProps.draggable}
 				zoomControl={wallProps.zoomControl}
+				ref={wallRef}
 				style={{
 					border: "4px dashed red",
 					height: 400,

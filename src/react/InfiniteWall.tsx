@@ -1,7 +1,8 @@
-import { type ReactNode, useEffect, useMemo, type HTMLAttributes, useRef } from "react";
+import { useEffect, useMemo, useRef, useImperativeHandle } from "react";
+import type { RefObject, HTMLAttributes, ReactNode } from "react";
 import { useInfiniteWall, type UseInfiniteWallOption } from "./useInfiniteWall.ts";
 import { ListenMoveArea } from "./ListenMoveArea.ts";
-import type { ApplyZoomResult } from "@uifx/infinite-wall";
+import type { ApplyZoomResult, InfiniteWallRender } from "@uifx/infinite-wall";
 
 export type InfiniteWallProps = HTMLAttributes<HTMLDivElement> &
 	Pick<UseInfiniteWallOption, "brickHeight" | "brickWidth" | "renderItem"> & {
@@ -12,6 +13,7 @@ export type InfiniteWallProps = HTMLAttributes<HTMLDivElement> &
 		zoomControl?: boolean;
 		/** force render 的依赖，当这个数组内发生变化时，强制更新 React Portal */
 		deps?: any[];
+		ref?: RefObject<InfiniteWallRender | null>;
 	};
 
 export function InfiniteWall(props: InfiniteWallProps): ReactNode {
@@ -22,6 +24,7 @@ export function InfiniteWall(props: InfiniteWallProps): ReactNode {
 		brickWidth,
 		draggable,
 		zoomControl,
+		ref,
 		renderItem,
 		onMouseDown,
 		onZoom,
@@ -35,7 +38,7 @@ export function InfiniteWall(props: InfiniteWallProps): ReactNode {
 	});
 	const propsRef = useRef(props);
 	propsRef.current = props;
-
+	useImperativeHandle(ref, () => wall, [wall]);
 	useEffect(() => {
 		const container = wall.container;
 		if (!zoomControl || !container) return;
